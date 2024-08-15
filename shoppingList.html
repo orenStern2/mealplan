@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <title>רשימת קניות</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: "Arial", sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            direction: rtl;
+            text-align: right;
+        }
+
+        h1 {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+            font-size: 2em;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 20px;
+            width: 80%;
+            margin: 20px auto;
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        li {
+            font-size: 1.2em;
+            margin: 10px 0;
+            padding: 10px;
+            border-bottom: 1px solid #dddddd;
+        }
+
+        li:last-child {
+            border-bottom: none;
+        }
+
+        input[type="checkbox"] {
+            margin-left: 10px;
+            transform: scale(1.5);
+        }
+
+        .completed {
+            text-decoration: line-through;
+            color: #777777;
+        }
+
+        @media only screen and (max-width: 600px) {
+            h1 {
+                font-size: 1.5em;
+            }
+
+            ul {
+                width: 95%;
+                padding: 15px;
+            }
+
+            li {
+                font-size: 1em;
+                padding: 8px;
+            }
+
+            input[type="checkbox"] {
+                transform: scale(1.2);
+            }
+        }
+    </style>
+    <script>
+        function toggleComplete(item) {
+            if (item.checked) {
+                item.parentNode.classList.add('completed');
+            } else {
+                item.parentNode.classList.remove('completed');
+            }
+        }
+    </script>
+</head>
+<body>
+
+<h1>רשימת קניות</h1>
+
+<ul>
+    <li><input type="checkbox" onclick="toggleComplete(this)">1/2 כוס שיבולת שועל</li>
+    <li><input type="checkbox" onclick="toggleComplete(this)">1 כוס חלב 1%</li>
+    <li><input type="checkbox" onclick="toggleComplete(this)">7 בננות</li>
+    <li><input type="checkbox" onclick="toggleComplete(this)">1 כף דבש</li>
+    <li><input type="checkbox" onclick="toggleComplete(this)">1 ק"ג חזה עוף</li>
+    <li><input type="checkbox" onclick="toggleComplete(this)">5 כוסות אורז מלא מבושל</li>
+    <li><input type="checkbox" onclick="toggleComplete(this)">1/2 ק"ג ירקות מוקפצים (קישואים, פלפלים, גזר)</li>
+    <li><input type="checkbox" onclick="toggleComplete(this)">7 כפות שמן זית</li>
+    <li><input type="checkbox" onclick="toggleComplete(this)">מלח, פלפל, תבלינים</li>
+    <li><input type="checkbox" onclick="toggleComplete(this)">1 קופסת קוטג'</li>
+    <li><input type="checkbox" onclick="toggleComplete(this)">12 פרוסות לחם קל</li>
+    <li><input type="checkbox" onclick="toggleComplete(this)">5 עגבניות</li>
+    <li><input type="checkbox" onclick="toggleComplete(this)">5 מלפפונים</li>
+    <li><input type="checkbox" onclick="toggleComplete(this)">6 ביצים</li>
+    <li><input type="checkbox" onclick="toggleComplete(this)">300 גרם גבינת פטה</li>
+    <li><input type="checkbox" onclick="toggleComplete(this)">2 קופסאות טונה במים</li>
+    <li><input type="checkbox" onclick="toggleComplete(this)">1 כוס גרנולה</li>
+    <li><input type="checkbox" onclick="toggleComplete(this)">1/2 ק"ג בשר בקר טחון</li>
+    <li><input type="checkbox" onclick="toggleComplete(this)">1/2 כוס קינואה</li>
+    <li><input type="checkbox" onclick="toggleComplete(this)">300 גרם פילה דג</li>
+    <li><input type="checkbox" onclick="toggleComplete(this)">1/2 ק"ג תפוחי אדמה</li>
+    <li><input type="checkbox" onclick="toggleComplete(this)">1/2 כוס ברוקולי</li>
+    <li><input type="checkbox" onclick="toggleComplete(this)">1 סקופ אבקת חלבון</li>
+    <li><input type="checkbox" onclick="toggleComplete(this)">1/2 כוס פירות יער</li>
+    <li><input type="checkbox" onclick="toggleComplete(this)">3 גביעי יוגורט 1%</li>
+    <li><input type="checkbox" onclick="toggleComplete(this)">1/2 כוס חלב שקדים</li>
+    <li><input type="checkbox" onclick="toggleComplete(this)">1 ק"ג עוף (כרעיים או חזה)</li>
+    <li><input type="checkbox" onclick="toggleComplete(this)">2 כוסות פסטה מבושלת</li>
+    <li><input type="checkbox" onclick="toggleComplete(this)">1 כוס רוטב עגבניות ביתי</li>
+    <li><input type="checkbox" onclick="toggleComplete(this)">1/2 אבוקדו</li>
+    <li><input type="checkbox" onclick="toggleComplete(this)">1/2 כוס קמח שיבולת שועל</li>
+    <li><input type="checkbox" onclick="toggleComplete(this)">1/2 כוס פירות טריים</li>
+    <li><input type="checkbox" onclick="toggleComplete(this)">1/2 כוס עדשים ירוקות</li>
+    <li><input type="checkbox" onclick="toggleComplete(this)">1/2 ק"ג קישואים</li>
+    <li><input type="checkbox" onclick="toggleComplete(this)">1/2 ק"ג גזר</li>
+</ul>
+
+</body>
+</html>

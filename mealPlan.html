@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <title>תוכנית תזונה שבועית</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: "Arial", sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            direction: rtl;
+            text-align: right;
+        }
+
+        h1 {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+            font-size: 2em;
+        }
+
+        p {
+            text-align: center;
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+
+        table {
+            width: 90%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            padding: 12px;
+            font-size: 1.1em;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            color: #333333;
+        }
+
+        td a {
+            color: #4CAF50;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        td a:hover {
+            color: #45a049;
+        }
+
+        .recipe {
+            display: none;
+            margin: 20px auto;
+            width: 80%;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .recipe h2 {
+            color: #4CAF50;
+            font-size: 1.5em;
+        }
+
+        .recipe ul {
+            list-style-type: square;
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        .recipe p {
+            font-size: 1.1em;
+            margin: 10px 0;
+        }
+
+        .recipe strong {
+            font-weight: bold;
+        }
+
+        @media only screen and (max-width: 600px) {
+            h1 {
+                font-size: 1.5em;
+            }
+
+            table {
+                width: 100%;
+            }
+
+            th, td {
+                font-size: 0.9em;
+                padding: 10px;
+            }
+
+            .recipe {
+                width: 95%;
+                padding: 15px;
+            }
+
+            .recipe h2 {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+    <script>
+        function toggleRecipe(id) {
+            var recipes = document.getElementsByClassName("recipe");
+            for (var i = 0; i < recipes.length; i++) {
+                if (recipes[i].id !== id) {
+                    recipes[i].style.display = "none";
+                }
+            }
+            var x = document.getElementById(id);
+            x.style.display = x.style.display === "none" ? "block" : "none";
+        }
+    </script>
+</head>
+<body>
+
+<h1>תוכנית תזונה שבועית</h1>
+
+
+<p><a href="shoppingList.html">לחץ כאן לרשימת הקניות</a></p>
+
+<table>
+    <tr>
+        <th>יום</th>
+        <th>ארוחת בוקר</th>
+        <th>ארוחת צהרים</th>
+        <th>ארוחת ערב</th>
+    </tr>
+    <tr>
+        <td>ראשון</td>
+        <td><a href="javascript:void(0);" onclick="toggleRecipe('breakfast1')">דייסת שיבולת שועל עם בננה</a></td>
+        <td><a href="javascript:void(0);" onclick="toggleRecipe('lunch1')">חזה עוף עם אורז וירקות</a></td>
+        <td><a href="javascript:void(0);" onclick="toggleRecipe('dinner1')">קוטג' עם לחם קל וירקות</a></td>
+    </tr>
+    <tr>
+        <td>שני</td>
+        <td><a href="javascript:void(0);" onclick="toggleRecipe('breakfast2')">יוגורט עם גרנולה ודבש</a></td>
+        <td><a href="javascript:void(0);" onclick="toggleRecipe('lunch2')">קציצות בקר עם קינואה וסלט ירקות</a></td>
+        <td><a href="javascript:void(0);" onclick="toggleRecipe('dinner2')">טוסט מלחם מלא עם אבוקדו וביצה קשה</a></td>
+    </tr>
+    <tr>
+        <td>שלישי</td>
+        <td><a href="javascript:void(0);" onclick="toggleRecipe('breakfast3')">חביתה עם ירקות וסלט קטן</a></td>
+        <td><a href="javascript:void(0);" onclick="toggleRecipe('lunch3')">פילה דג עם תפוחי אדמה אפויים וברוקולי</a></td>
+        <td><a href="javascript:void(0);" onclick="toggleRecipe('dinner3')">סלט טונה עם ביצה קשה ולחם קל</a></td>
+    </tr>
+    <tr>
+        <td>רביעי</td>
+        <td><a href="javascript:void(0);" onclick="toggleRecipe('breakfast4')">שייק חלבון עם פירות יער ויוגורט</a></td>
+        <td><a href="javascript:void(0);" onclick="toggleRecipe('lunch4')">סטייק עוף עם פסטה ברוטב עגבניות וסלט ירקות</a></td>
+        <td><a href="javascript:void(0);" onclick="toggleRecipe('dinner4')">חביתת ירק עם גבינת קוטג' ופרוסת לחם מלא</a></td>
+    </tr>
+    <tr>
+        <td>חמישי</td>
+        <td><a href="javascript:void(0);" onclick="toggleRecipe('breakfast5')">ביצה רכה עם לחם קל ומלפפון</a></td>
+        <td><a href="javascript:void(0);" onclick="toggleRecipe('lunch5')">עוף בתנור עם בטטות וגזר</a></td>
+        <td><a href="javascript:void(0);" onclick="toggleRecipe('dinner5')">יוגורט עם אגוזים ודבש</a></td>
+    </tr>
+    <tr>
+        <td>שישי</td>
+        <td><a href="javascript:void(0);" onclick="toggleRecipe('breakfast6')">פנקייק חלבון עם פירות טריים</a></td>
+        <td><a href="javascript:void(0);" onclick="toggleRecipe('lunch6')">קוסקוס עם ירקות ועוף</a></td>
+        <td><a href="javascript:void(0);" onclick="toggleRecipe('dinner6')">שקשוקה עם גבינה ופרוסת לחם קל</a></td>
+    </tr>
+    <tr>
+        <td>שבת</td>
+        <td><a href="javascript:void(0);" onclick="toggleRecipe('breakfast7')">סנדוויץ' מלחם מלא עם גבינת קוטג' וירקות</a></td>
+        <td><a href="javascript:void(0);" onclick="toggleRecipe('lunch7')">מרק עדשים עם אורז מלא וסלט ירקות</a></td>
+        <td><a href="javascript:void(0);" onclick="toggleRecipe('dinner7')">פשטידת ירקות עם גבינת פטה ופרוסת לחם קל</a></td>
+    </tr>
+</table>
+
+<!-- Sunday Recipes -->
+<div id="breakfast1" class="recipe">
+    <h2>דייסת שיבולת שועל עם בננה</h2>
+    <p><strong>מרכיבים:</strong></p>
+    <ul>
+        <li>1/2 כוס שיבולת שועל</li>
+        <li>1 כוס חלב 1%</li>
+        <li>1 בננה חתוכה</li>
+        <li>1 כף דבש</li>
+    </ul>
+    <p><strong>הוראות הכנה:</strong> לבשל את שיבולת השועל עם החלב בסיר קטן עד שמגיע לרתיחה. להוריד מהאש ולהוסיף את הבננה והדבש. לערבב היטב ולהגיש.</p>
+    <p><strong>ערכים תזונתיים:</strong></p>
+    <ul>
+        <li>קלוריות: 250</li>
+        <li>חלבון: 8 גרם</li>
+        <li>פחמימות: 50 גרם</li>
+        <li>שומנים: 4 גרם</li>
+    </ul>
+</div>
+
+<div id="lunch1" class="recipe">
+    <h2>חזה עוף עם אורז וירקות</h2>
+    <p><strong>מרכיבים:</strong></p>
+    <ul>
+        <li>150 גרם חזה עוף</li>
+        <li>1 כוס אורז מלא מבושל</li>
+        <li>1 כוס ירקות מוקפצים (קישואים, פלפלים, גזר)</li>
+        <li>1 כף שמן זית</li>
+        <li>מלח, פלפל, תבלינים לפי הטעם</li>
+    </ul>
+    <p><strong>הוראות הכנה:</strong> לחמם את השמן במחבת ולטגן את חזה העוף עד שמבושל. להוסיף את הירקות המוקפצים ולבשל עוד 5 דקות. להגיש עם האורז.</p>
+    <p><strong>ערכים תזונתיים:</strong></p>
+    <ul>
+        <li>קלוריות: 450</li>
+        <li>חלבון: 35 גרם</li>
+        <li>פחמימות: 50 גרם</li>
+        <li>שומנים: 10 גרם</li>
+    </ul>
+</div>
+
+<div id="dinner1" class="recipe">
+    <h2>קוטג' עם לחם קל וירקות</h2>
+    <p><strong>מרכיבים:</strong></p>
+    <ul>
+        <li>150 גרם גבינת קוטג' 5%</li>
+        <li>2 פרוסות לחם קל</li>
+        <li>1 עגבניה חתוכה</li>
+        <li>1 מלפפון חתוך</li>
+        <li>מלח, פלפל לפי הטעם</li>
+    </ul>
+    <p><strong>הוראות הכנה:</strong> להניח את גבינת הקוטג' על פרוסות הלחם ולהגיש עם הירקות בצד.</p>
+    <p><strong>ערכים תזונתיים:</strong></p>
+    <ul>
+        <li>קלוריות: 300</li>
+        <li>חלבון: 20 גרם</li>
+        <li>פחמימות: 35 גרם</li>
+        <li>שומנים: 10 גרם</li>
+    </ul>
+</div>
+
+<!-- Monday Recipes -->
+<div id="breakfast2" class="recipe">
+    <h2>יוגורט עם גרנולה ודבש</h2>
+    <p><strong>מרכיבים:</strong></p>
+    <ul>
+        <li>1 גביע יוגורט 1%</li>
+        <li>1/3 כוס גרנולה</li>
+        <li>1 כף דבש</li>
+    </ul>
+    <p><strong>הוראות הכנה:</strong> לערבב את כל המרכיבים יחד ולהגיש.</p>
+    <p><strong>ערכים תזונתיים:</strong></p>
+    <ul>
+        <li>קלוריות: 200</li>
+        <li>חלבון: 6 גרם</li>
+        <li>פחמימות: 35 גרם</li>
+        <li>שומנים: 4 גרם</li>
+    </ul>
+</div>
+
+<div id="lunch2" class="recipe">
+    <h2>קציצות בקר עם קינואה וסלט ירקות</h2>
+    <p><strong>מרכיבים:</strong></p>
+    <ul>
+        <li>150 גרם בקר טחון</li>
+        <li>1/2 כוס קינואה מבושלת</li>
+        <li>1 כף שמן זית</li>
+        <li>1 כוס סלט ירקות (עגבניה, מלפפון, גזר)</li>
+        <li>מלח, פלפל, תבלינים לפי הטעם</li>
+    </ul>
+    <p><strong>הוראות הכנה:</strong> ליצור קציצות מבשר טחון, לתבל ולטגן בשמן זית. להגיש עם קינואה וסלט.</p>
+    <p><strong>ערכים תזונתיים:</strong></p>
+    <ul>
+        <li>קלוריות: 500</li>
+        <li>חלבון: 40 גרם</li>
+        <li>פחמימות: 45 גרם</li>
+        <li>שומנים: 20 גרם</li>
+    </ul>
+</div>
+
+<div id="dinner2" class="recipe">
+    <h2>טוסט מלחם מלא עם אבוקדו וביצה קשה</h2>
+    <p><strong>מרכיבים:</strong></p>
+    <ul>
+        <li>2 פרוסות לחם מלא</li>
+        <li>1/2 אבוקדו מעוך</li>
+        <li>1 ביצה קשה</li>
+        <li>מלח, פלפל לפי הטעם</li>
+    </ul>
+    <p><strong>הוראות הכנה:</strong> למרוח אבוקדו על הלחם ולהניח פרוסות ביצה קשה מעל. להגיש.</p>
+    <p><strong>ערכים תזונתיים:</strong></p>
+    <ul>
+        <li>קלוריות: 350</li>
+        <li>חלבון: 15 גרם</li>
+        <li>פחמימות: 40 גרם</li>
+        <li>שומנים: 15 גרם</li>
+    </ul>
+</div>
+
+<!-- Tuesday Recipes -->
+<div id="breakfast3" class="recipe">
+    <h2>חביתה עם ירקות וסלט קטן</h2>
+    <p><strong>מרכיבים:</strong></p>
+    <ul>
+        <li>2 ביצים</li>
+        <li>1/4 כוס ירקות חתוכים (פלפלים, עגבניות, פטריות)</li>
+        <li>1 כף שמן זית</li>
+        <li>מלח, פלפל לפי הטעם</li>
+        <li>סלט קטן מ-1 עגבניה ומ-1 מלפפון</li>
+    </ul>
+    <p><strong>הוראות הכנה:</strong> לחמם את השמן במחבת, לטגן את הירקות, ולהוסיף את הביצים. לערבב ולבשל עד שהחביתה מוכנה. להגיש עם הסלט.</p>
+    <p><strong>ערכים תזונתיים:</strong></p>
+    <ul>
+        <li>קלוריות: 300</li>
+        <li>חלבון: 15 גרם</li>
+        <li>פחמימות: 10 גרם</li>
+        <li>שומנים: 20 גרם</li>
+    </ul>
+</div>
+
+<div id="lunch3" class="recipe">
+    <h2>פילה דג עם תפוחי אדמה אפויים וברוקולי</h2>
+    <p><strong>מרכיבים:</strong></p>
+    <ul>
+        <li>150 גרם פילה דג (כגון סלמון או דניס)</li>
+        <li>1 תפוח אדמה בינוני חתוך לקוביות</li>
+        <li>1/2 כוס ברוקולי מבושל</li>
+        <li>1 כף שמן זית</li>
+        <li>מלח, פלפל, תבלינים לפי הטעם</li>
+    </ul>
+    <p><strong>הוראות הכנה:</strong> לאפות את תפוחי האדמה בתנור עם שמן זית ותבלינים עד שהם רכים. לבשל את הברוקולי במים רותחים. לטגן את הדג במחבת עד שמוכן ולהגיש עם תפוחי האדמה והברוקולי.</p>
+    <p><strong>ערכים תזונתיים:</strong></p>
+    <ul>
+        <li>קלוריות: 450</li>
+        <li>חלבון: 35 גרם</li>
+        <li>פחמימות: 40 גרם</li>
+        <li>שומנים: 15 גרם</li>
+    </ul>
+</div>
+
+<div id="dinner3" class="recipe">
+    <h2>סלט טונה עם ביצה קשה ולחם קל</h2>
+    <p><strong>מרכיבים:</strong></p>
+    <ul>
+        <li>1 קופסת טונה במים</li>
+        <li>1 ביצה קשה</li>
+        <li>1/2 עגבניה חתוכה</li>
+        <li>1/2 מלפפון חתוך</li>
+        <li>2 פרוסות לחם קל</li>
+        <li>מלח, פלפל לפי הטעם</li>
+    </ul>
+    <p><strong>הוראות הכנה:</strong> לערבב את כל המרכיבים ולהגיש עם לחם קל בצד.</p>
+    <p><strong>ערכים תזונתיים:</strong></p>
+    <ul>
+        <li>קלוריות: 350</li>
+        <li>חלבון: 25 גרם</li>
+        <li>פחמימות: 30 גרם</li>
+        <li>שומנים: 10 גרם</li>
+    </ul>
+</div>
+
+<!-- Wednesday Recipes -->
+<div id="breakfast4" class="recipe">
+    <h2>שייק חלבון עם פירות יער ויוגורט</h2>
+    <p><strong>מרכיבים:</strong></p>
+    <ul>
+        <li>1 סקופ אבקת חלבון</li>
+        <li>1/2 כוס פירות יער</li>
+        <li>1 גביע יוגורט 1%</li>
+        <li>1/2 כוס חלב שקדים</li>
+    </ul>
+    <p><strong>הוראות הכנה:</strong> לשים את כל המרכיבים בבלנדר ולערבב עד לקבלת מרקם אחיד.</p>
+    <p><strong>ערכים תזונתיים:</strong></p>
+    <ul>
+        <li>קלוריות: 250</li>
+        <li>חלבון: 30 גרם</li>
+        <li>פחמימות: 20 גרם</li>
+        <li>שומנים: 5 גרם</li>
+    </ul>
+</div>
+
+<div id="lunch4" class="recipe">
+    <h2>סטייק עוף עם פסטה ברוטב עגבניות וסלט ירקות</h2>
+    <p><strong>מרכיבים:</strong></p>
+    <ul>
+        <li>150 גרם סטייק עוף</li>
+        <li>1 כוס פסטה מבושלת</li>
+        <li>1/2 כוס רוטב עגבניות ביתי</li>
+        <li>1 כוס סלט ירקות (עגבניה, מלפפון, פלפל)</li>
+        <li>1 כף שמן זית</li>
+        <li>מלח, פלפל, תבלינים לפי הטעם</li>
+    </ul>
+    <p><strong>הוראות הכנה:</strong> לטגן את הסטייק עוף בשמן זית, להוסיף את הפסטה והרוטב עגבניות, ולהגיש עם הסלט.</p>
+    <p><strong>ערכים תזונתיים:</strong></p>
+    <ul>
+        <li>קלוריות: 500</li>
+        <li>חלבון: 35 גרם</li>
+        <li>פחמימות: 60 גרם</li>
+        <li>שומנים: 15 גרם</li>
+    </ul>
+</div>
+
+<div id="dinner4" class="recipe">
+    <h2>חביתת ירק עם גבינת קוטג' ופרוסת לחם מלא</h2>
+    <p><strong>מרכיבים:</strong></p>
+    <ul>
+        <li>2 ביצים</li>
+        <li>1/4 כוס ירקות חתוכים (בצל, תרד, פטריות)</li>
+        <li>150 גרם גבינת קוטג'</li>
+        <li>1 פרוסת לחם מלא</li>
+        <li>מלח, פלפל לפי הטעם</li>
+    </ul>
+    <p><strong>הוראות הכנה:</strong> לטגן את הירקות במחבת, להוסיף את הביצים ולבשל עד שהחביתה מוכנה. להגיש עם גבינת קוטג' ולחם מלא.</p>
+    <p><strong>ערכים תזונתיים:</strong></p>
+    <ul>
+        <li>קלוריות: 350</li>
+        <li>חלבון: 25 גרם</li>
+        <li>פחמימות: 30 גרם</li>
+        <li>שומנים: 15 גרם</li>
+    </ul>
+</div>
+
+<!-- Thursday Recipes -->
+<div id="breakfast5" class="recipe">
+    <h2>ביצה רכה עם לחם קל ומלפפון</h2>
+    <p><strong>מרכיבים:</strong></p>
+    <ul>
+        <li>2 ביצים</li>
+        <li>2 פרוסות לחם קל</li>
+        <li>1 מלפפון</li>
+        <li>מלח, פלפל לפי הטעם</li>
+    </ul>
+    <p><strong>הוראות הכנה:</strong> לבשל את הביצים במים רותחים עד שהן רכות. להגיש עם לחם קל ומלפפון.</p>
+    <p><strong>ערכים תזונתיים:</strong></p>
+    <ul>
+        <li>קלוריות: 250</li>
+        <li>חלבון: 15 גרם</li>
+        <li>פחמימות: 30 גרם</li>
+        <li>שומנים: 10 גרם</li>
+    </ul>
+</div>
+
+<div id="lunch5" class="recipe">
+    <h2>עוף בתנור עם בטטות וגזר</h2>
+    <p><strong>מרכיבים:</strong></p>
+    <ul>
+        <li>150 גרם עוף (כרעיים או חזה)</li>
+        <li>1 בטטה בינונית חתוכה</li>
+        <li>2 גזרים חתוכים</li>
+        <li>1 כף שמן זית</li>
+        <li>מלח, פלפל, תבלינים לפי הטעם</li>
+    </ul>
+    <p><strong>הוראות הכנה:</strong> לאפות את העוף עם הבטטות והגזר בתנור עם שמן זית ותבלינים עד שהם רכים ומבושלים היטב.</p>
+    <p><strong>ערכים תזונתיים:</strong></p>
+    <ul>
+        <li>קלוריות: 450</li>
+        <li>חלבון: 35 גרם</li>
+        <li>פחמימות: 40 גרם</li>
+        <li>שומנים: 15 גרם</li>
+    </ul>
+</div>
+
+<div id="dinner5" class="recipe">
+    <h2>יוגורט עם אגוזים ודבש</h2>
+    <p><strong>מרכיבים:</strong></p>
+    <ul>
+        <li>1 גביע יוגורט 1%</li>
+        <li>1 כף אגוזים קצוצים</li>
+        <li>1 כף דבש</li>
+    </ul>
+    <p><strong>הוראות הכנה:</strong> לערבב את כל המרכיבים יחד ולהגיש.</p>
+    <p><strong>ערכים תזונתיים:</strong></p>
+    <ul>
+        <li>קלוריות: 200</li>
+        <li>חלבון: 6 גרם</li>
+        <li>פחמימות: 25 גרם</li>
+        <li>שומנים: 8 גרם</li>
+    </ul>
+</div>
+
+<!-- Friday Recipes -->
+<div id="breakfast6" class="recipe">
+    <h2>פנקייק חלבון עם פירות טריים</h2>
+    <p><strong>מרכיבים:</strong></p>
+    <ul>
+        <li>1 סקופ אבקת חלבון</li>
+        <li>1/2 כוס קמח שיבולת שועל</li>
+        <li>1 ביצה</li>
+        <li>1/2 כוס חלב שקדים</li>
+        <li>1/2 כוס פירות טריים (תותים, בננות, אוכמניות)</li>
+    </ul>
+    <p><strong>הוראות הכנה:</strong> לערבב את כל המרכיבים לבלילה אחידה, לטגן במחבת עד לקבלת פנקייקים זהובים, ולהגיש עם הפירות.</p>
+    <p><strong>ערכים תזונתיים:</strong></p>
+    <ul>
+        <li>קלוריות: 300</li>
+        <li>חלבון: 25 גרם</li>
+        <li>פחמימות: 40 גרם</li>
+        <li>שומנים: 8 גרם</li>
+    </ul>
+</div>
+
+<div id="lunch6" class="recipe">
+    <h2>קוסקוס עם ירקות ועוף</h2>
+    <p><strong>מרכיבים:</strong></p>
+    <ul>
+        <li>1 כוס קוסקוס מבושל</li>
+        <li>150 גרם עוף (כרעיים או חזה)</li>
+        <li>1 כוס ירקות מבושלים (קישואים, גזר, דלעת)</li>
+        <li>1 כף שמן זית</li>
+        <li>מלח, פלפל, תבלינים לפי הטעם</li>
+    </ul>
+    <p><strong>הוראות הכנה:</strong> לבשל את הקוסקוס לפי ההוראות, לאפות את העוף עם הירקות בתנור עם שמן זית ותבלינים, ולהגיש יחד.</p>
+    <p><strong>ערכים תזונתיים:</strong></p>
+    <ul>
+        <li>קלוריות: 500</li>
+        <li>חלבון: 35 גרם</li>
+        <li>פחמימות: 55 גרם</li>
+        <li>שומנים: 15 גרם</li>
+    </ul>
+</div>
+
+<div id="dinner6" class="recipe">
+    <h2>שקשוקה עם גבינה ופרוסת לחם קל</h2>
+    <p><strong>מרכיבים:</strong></p>
+    <ul>
+        <li>2 ביצים</li>
+        <li>1/2 כוס רוטב עגבניות ביתי</li>
+        <li>50 גרם גבינת פטה</li>
+        <li>1 פרוסת לחם קל</li>
+        <li>מלח, פלפל לפי הטעם</li>
+    </ul>
+    <p><strong>הוראות הכנה:</strong> לחמם את רוטב העגבניות במחבת, לשבור לתוכו את הביצים, לפזר מעל את גבינת הפטה, ולבשל עד שהביצים מוכנות. להגיש עם פרוסת לחם קל.</p>
+    <p><strong>ערכים תזונתיים:</strong></p>
+    <ul>
+        <li>קלוריות: 350</li>
+        <li>חלבון: 20 גרם</li>
+        <li>פחמימות: 30 גרם</li>
+        <li>שומנים: 15 גרם</li>
+    </ul>
+</div>
+
+<!-- Saturday Recipes -->
+<div id="breakfast7" class="recipe">
+    <h2>סנדוויץ' מלחם מלא עם גבינת קוטג' וירקות</h2>
+    <p><strong>מרכיבים:</strong></p>
+    <ul>
+        <li>2 פרוסות לחם מלא</li>
+        <li>150 גרם גבינת קוטג'</li>
+        <li>2 פרוסות עגבניה</li>
+        <li>1 מלפפון חתוך לפרוסות</li>
+        <li>מלח, פלפל לפי הטעם</li>
+    </ul>
+    <p><strong>הוראות הכנה:</strong> להכין סנדוויץ' מלחם מלא עם גבינת קוטג' וירקות, ולהגיש.</p>
+    <p><strong>ערכים תזונתיים:</strong></p>
+    <ul>
+        <li>קלוריות: 300</li>
+        <li>חלבון: 20 גרם</li>
+        <li>פחמימות: 35 גרם</li>
+        <li>שומנים: 10 גרם</li>
+    </ul>
+</div>
+
+<div id="lunch7" class="recipe">
+    <h2>מרק עדשים עם אורז מלא וסלט ירקות</h2>
+    <p><strong>מרכיבים:</strong></p>
+    <ul>
+        <li>1 כוס עדשים ירוקות</li>
+        <li>1/2 כוס אורז מלא מבושל</li>
+        <li>1 כף שמן זית</li>
+        <li>1 כוס סלט ירקות (עגבניה, מלפפון, פלפל)</li>
+        <li>מלח, פלפל, תבלינים לפי הטעם</li>
+    </ul>
+    <p><strong>הוראות הכנה:</strong> לבשל את העדשים במים עד שהן רכות, להוסיף את התבלינים ולבשל עוד 10 דקות. להגיש עם אורז וסלט ירקות.</p>
+    <p><strong>ערכים תזונתיים:</strong></p>
+    <ul>
+        <li>קלוריות: 400</li>
+        <li>חלבון: 20 גרם</li>
+        <li>פחמימות: 60 גרם</li>
+        <li>שומנים: 10 גרם</li>
+    </ul>
+</div>
+
+<div id="dinner7" class="recipe">
+    <h2>פשטידת ירקות עם גבינת פטה ופרוסת לחם קל</h2>
+    <p><strong>מרכיבים:</strong></p>
+    <ul>
+        <li>1/2 כוס ירקות חתוכים (קישואים, פלפלים, בצל)</li>
+        <li>50 גרם גבינת פטה</li>
+        <li>1 ביצה</li>
+        <li>1 כף קמח מלא</li>
+        <li>1 פרוסת לחם קל</li>
+        <li>מלח, פלפל לפי הטעם</li>
+    </ul>
+    <p><strong>הוראות הכנה:</strong> לערבב את כל המרכיבים, לשים בתבנית ולאפות בתנור עד שמזהיב. להגיש עם פרוסת לחם קל.</p>
+    <p><strong>ערכים תזונתיים:</strong></p>
+    <ul>
+        <li>קלוריות: 350</li>
+        <li>חלבון: 20 גרם</li>
+        <li>פחמימות: 30 גרם</li>
+        <li>שומנים: 15 גרם</li>
+    </ul>
+</div>
+
+</body>
+</html>
