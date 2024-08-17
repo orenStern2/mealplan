@@ -176,6 +176,15 @@
                 });
             }
         });
+
+        function loadDay(day) {
+            fetch(day + '-recipe.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById(day + '-recipe').innerHTML = data;
+                })
+                .catch(error => console.error('Error fetching the recipe:', error));
+        }
     </script>
 </head>
 <body>
@@ -256,14 +265,7 @@
 
 <div id="sunday-recipe"></div>
 
-function loadDay(day) {
-        fetch(day + '-recipe.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById(day + '-recipe').innerHTML = data;
-            })
-            .catch(error => console.error('Error fetching the recipe:', error));
-}
+
 
 
 
