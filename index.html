@@ -88,6 +88,31 @@
             font-weight: bold;
         }
 
+        .collapsible {
+            background-color: #f2f2f2;
+            color: #333333;
+            cursor: pointer;
+            padding: 10px;
+            width: 90%;
+            text-align: center;
+            border: none;
+            outline: none;
+            font-size: 1.1em;
+            margin: 20px auto;
+            border-radius: 5px;
+        }
+
+        .active, .collapsible:hover {
+            background-color: #d9d9d9;
+        }
+
+        .content {
+            display: none;
+            overflow: hidden;
+            width: 90%;
+            margin: 0 auto;
+        }
+
         @media only screen and (max-width: 600px) {
             h1 {
                 font-size: 1.5em;
@@ -123,6 +148,21 @@
             var x = document.getElementById(id);
             x.style.display = x.style.display === "none" ? "block" : "none";
         }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            var coll = document.getElementsByClassName("collapsible");
+            for (var i = 0; i < coll.length; i++) {
+                coll[i].addEventListener("click", function() {
+                    this.classList.toggle("active");
+                    var content = this.nextElementSibling;
+                    if (content.style.display === "block") {
+                        content.style.display = "none";
+                    } else {
+                        content.style.display = "block";
+                    }
+                });
+            }
+        });
     </script>
 </head>
 <body>
@@ -648,67 +688,69 @@
     <p><strong>ערכים תזונתיים:</strong> <br> לאורן: קלוריות: 300, חלבון: 15 גרם, פחמימות: 50 גרם, שומנים: 10 גרם. <br> לאאיריס: קלוריות: 225, חלבון: 11.25 גרם, פחמימות: 37.5 גרם, שומנים: 7.5 גרם.</p>
 </div>
 
-<!-- Summary Tables -->
-<h2>סיכום ערכים תזונתיים</h2>
-<h4>יומי</h4>
-<table>
-    <tr>
-        <th>ערכים</th>
-        <th>אורן (יומי)</th>
-        <th>איריס (יומי)</th>
-    </tr>
-    <tr>
-        <td>קלוריות</td>
-        <td>2,571 קלוריות (בערך)</td>
-        <td>1,928 קלוריות (בערך)</td>
-    </tr>
-    <tr>
-        <td>חלבון</td>
-        <td>180 גרם (בערך)</td>
-        <td>135 גרם (בערך)</td>
-    </tr>
-    <tr>
-        <td>פחמימות</td>
-        <td>308 גרם (בערך)</td>
-        <td>231 גרם (בערך)</td>
-    </tr>
-    <tr>
-        <td>שומנים</td>
-        <td>77 גרם (בערך)</td>
-        <td>58 גרם (בערך)</td>
-    </tr>
-</table>
+<!-- Weekly Summary -->
+<button class="collapsible">סיכום ערכים תזונתיים שבועי (קלוריות: אורן 18,000, איריס 13,500)</button>
+<div class="content">
+    <table>
+        <tr>
+            <th>ערכים</th>
+            <th>אורן</th>
+            <th>איריס</th>
+        </tr>
+        <tr>
+            <td>קלוריות</td>
+            <td>18,000 קלוריות (בערך)</td>
+            <td>13,500 קלוריות (בערך)</td>
+        </tr>
+        <tr>
+            <td>חלבון</td>
+            <td>1,260 גרם (בערך)</td>
+            <td>945 גרם (בערך)</td>
+        </tr>
+        <tr>
+            <td>פחמימות</td>
+            <td>2,160 גרם (בערך)</td>
+            <td>1,620 גרם (בערך)</td>
+        </tr>
+        <tr>
+            <td>שומנים</td>
+            <td>540 גרם (בערך)</td>
+            <td>405 גרם (בערך)</td>
+        </tr>
+    </table>
+</div>
 
-<h4>שבועי</h4>
-<table>
-    <tr>
-        <th>ערכים</th>
-        <th>אורן</th>
-        <th>איריס</th>
-    </tr>
-    <tr>
-        <td>קלוריות</td>
-        <td>18,000 קלוריות (בערך)</td>
-        <td>13,500 קלוריות (בערך)</td>
-    </tr>
-    <tr>
-        <td>חלבון</td>
-        <td>1,260 גרם (בערך)</td>
-        <td>945 גרם (בערך)</td>
-    </tr>
-    <tr>
-        <td>פחמימות</td>
-        <td>2,160 גרם (בערך)</td>
-        <td>1,620 גרם (בערך)</td>
-    </tr>
-    <tr>
-        <td>שומנים</td>
-        <td>540 גרם (בערך)</td>
-        <td>405 גרם (בערך)</td>
-    </tr>
-</table>
-
-
+<!-- Daily Summary -->
+<button class="collapsible">סיכום ערכים תזונתיים יומי (קלוריות: אורן 2,571, איריס 1,928)</button>
+<div class="content">
+    <table>
+        <tr>
+            <th>ערכים</th>
+            <th>אורן (יומי)</th>
+            <th>איריס (יומי)</th>
+        </tr>
+        <tr>
+            <td>קלוריות</td>
+            <td>2,571 קלוריות (בערך)</td>
+            <td>1,928 קלוריות (בערך)</td>
+        </tr>
+        <tr>
+            <td>חלבון</td>
+            <td>180 גרם (בערך)</td>
+            <td>135 גרם (בערך)</td>
+        </tr>
+        <tr>
+            <td>פחמימות</td>
+            <td>308 גרם (בערך)</td>
+            <td>231 גרם (בערך)</td>
+        </tr>
+        <tr>
+            <td>שומנים</td>
+            <td>77 גרם (בערך)</td>
+            <td>58 גרם (בערך)</td>
+        </tr>
+    </table>
+</div>
 
 
 </body>
