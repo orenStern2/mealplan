@@ -180,6 +180,23 @@
             }
         });
 
+        function loadRecipe(recipeId, url) {
+            var element = document.getElementById(recipeId);
+            if (!element.innerHTML) {
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        element.innerHTML = xhr.responseText;
+                        toggleRecipe(recipeId); // Show the content after loading it
+                    }
+                };
+                xhr.open("GET", url, true);
+                xhr.send();
+            } else {
+                toggleRecipe(recipeId); // If content is already loaded, just toggle its visibility
+            }
+        }
+
     </script>
 </head>
 <body>
@@ -198,7 +215,7 @@
     </tr>
     <tr>
         <td>ראשון</td>
-        <td><a href="javascript:void(0);" onclick="toggleRecipe('breakfast1')">דייסת שיבולת שועל עם בננה ושקדים</a></td>
+        <td><a href="javascript:void(0);" onclick="loadRecipe('breakfast1', 'sunday-recipe.html')">דייסת שיבולת שועל עם בננה ושקדים</a></td>
         <td><a href="javascript:void(0);" onclick="toggleRecipe('snack1')">יוגורט עם גרנולה ופירות יער</a></td>
         <td><a href="javascript:void(0);" onclick="toggleRecipe('lunch1')">חזה עוף עם קינואה וסלט ירקות*</a></td>
         <td><a href="javascript:void(0);" onclick="toggleRecipe('snack2')">חטיף חלבון או במבה</a></td>
