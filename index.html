@@ -150,7 +150,8 @@
             }
         }
     </style>
-    <script>
+
+        <script>
         function toggleRecipe(id) {
             var recipes = document.getElementsByClassName("recipe");
             for (var i = 0; i < recipes.length; i++) {
@@ -163,7 +164,6 @@
                 x.style.display = x.style.display === "none" ? "block" : "none";
             }
         }
-
 
         document.addEventListener("DOMContentLoaded", function() {
             var coll = document.getElementsByClassName("collapsible");
@@ -196,8 +196,8 @@
                 toggleRecipe(recipeId); // If content is already loaded, just toggle its visibility
             }
         }
-
     </script>
+    
 </head>
 <body>
 <h1>תוכנית תזונה שבועית</h1>
@@ -216,7 +216,7 @@
     <tr>
         <div id="sunday-recipe">
             <td>ראשון</td>
-            <td ><a href="javascript:void(0);" onclick="loadRecipe('breakfast1', 'sunday-recipe.html')">דייסת שיבולת שועל עם בננה ושקדים</a></td>
+            <td><a href="javascript:void(0);" onclick="loadRecipe('sunday-recipe', 'sunday-recipe.html')">דייסת שיבולת שועל עם בננה ושקדים</a></td>
             <td><a href="javascript:void(0);" onclick="toggleRecipe('snack1')">יוגורט עם גרנולה ופירות יער</a></td>
             <td><a href="javascript:void(0);" onclick="toggleRecipe('lunch1')">חזה עוף עם קינואה וסלט ירקות*</a></td>
             <td><a href="javascript:void(0);" onclick="toggleRecipe('snack2')">חטיף חלבון או במבה</a></td>
