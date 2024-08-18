@@ -159,8 +159,11 @@
                 }
             }
             var x = document.getElementById(id);
-            x.style.display = x.style.display === "none" ? "block" : "none";
+            if (x) {
+                x.style.display = x.style.display === "none" ? "block" : "none";
+            }
         }
+
 
         document.addEventListener("DOMContentLoaded", function() {
             var coll = document.getElementsByClassName("collapsible");
