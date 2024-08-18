@@ -73,5 +73,41 @@
     <p><strong>כמות:</strong> <br> לאורן: 2 ביצים, 1/2 כוס רוטב עגבניות, 50 גרם גבינה, פרוסת לחם מלא אחת. <br> לאיריס: 1 ביצה, 1/4 כוס רוטב עגבניות, 40 גרם גבינה, חצי פרוסת לחם מלא.</p>
     <p><strong>ערכים תזונתיים:</strong> <br> לאורן: קלוריות: 450, חלבון: 25 גרם, פחמימות: 40 גרם, שומנים: 20 גרם. <br> לאיריס: קלוריות: 337, חלבון: 19 גרם, פחמימות: 30 גרם, שומנים: 15 גרם.</p>
 </div>
+     <script>
+        function toggleRecipe(id) {
+            var recipes = document.getElementsByClassName("recipe");
+            for (var i = 0; i < recipes.length; i++) {
+                if (recipes[i].id !== id) {
+                    recipes[i].style.display = "none";
+                }
+            }
+            var x = document.getElementById(id);
+            x.style.display = x.style.display === "none" ? "block" : "none";
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            var coll = document.getElementsByClassName("collapsible");
+            for (var i = 0; i < coll.length; i++) {
+                coll[i].addEventListener("click", function() {
+                    this.classList.toggle("active");
+                    var content = this.nextElementSibling;
+                    if (content.style.display === "block") {
+                        content.style.display = "none";
+                    } else {
+                        content.style.display = "block";
+                    }
+                });
+            }
+        });
+
+        function loadDay(day) {
+            fetch(day + '-recipe.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById(day + '-recipe').innerHTML = data;
+                })
+                .catch(error => console.error('Error fetching the recipe:', error));
+        }
+    </script>
 </body>
 </html>
