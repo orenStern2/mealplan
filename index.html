@@ -177,14 +177,16 @@
             }
         });
 
-        function loadDay(day) {
+        function loadDay(day, recipeId) {
             fetch(day + '-recipe.html')
                 .then(response => response.text())
                 .then(data => {
                     document.getElementById(day + '-recipe').innerHTML = data;
+                    toggleRecipe(recipeId); // Ensure that the recipe is toggled after loading
                 })
                 .catch(error => console.error('Error fetching the recipe:', error));
         }
+
     </script>
 </head>
 <body>
@@ -203,11 +205,12 @@
     </tr>
     <tr>
         <td>ראשון</td>
-        <td><a href="javascript:void(0);" onclick="toggleRecipe('breakfast1'); loadDay('sunday')">דייסת שיבולת שועל עם בננה ושקדים</a></td>
-        <td><a href="javascript:void(0);" onclick="toggleRecipe('snack1'); loadDay('sunday')">יוגורט עם גרנולה ופירות יער</a></td>
-        <td><a href="javascript:void(0);" onclick="toggleRecipe('lunch1'); loadDay('sunday')">חזה עוף עם קינואה וסלט ירקות*</a></td>
-        <td><a href="javascript:void(0);" onclick="toggleRecipe('snack2'); loadDay('sunday')">חטיף חלבון או במבה</a></td>
-        <td><a href="javascript:void(0);" onclick="toggleRecipe('dinner1'); loadDay('sunday')">שקשוקה עם גבינה ופרוסת לחם מלא</a></td>
+        <td><a href="javascript:void(0);" onclick="loadDay('sunday', 'breakfast1')">דייסת שיבולת שועל עם בננה ושקדים</a></td>
+        <td><a href="javascript:void(0);" onclick="loadDay('sunday', 'snack1')">יוגורט עם גרנולה ופירות יער</a></td>
+        <td><a href="javascript:void(0);" onclick="loadDay('sunday', 'lunch1')">חזה עוף עם קינואה וסלט ירקות*</a></td>
+        <td><a href="javascript:void(0);" onclick="loadDay('sunday', 'snack2')">חטיף חלבון או במבה</a></td>
+        <td><a href="javascript:void(0);" onclick="loadDay('sunday', 'dinner1')">שקשוקה עם גבינה ופרוסת לחם מלא</a></td>
+
     </tr>
     <tr>
         <td>שני</td>
