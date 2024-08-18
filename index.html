@@ -184,7 +184,7 @@
             fetch(day + '-recipe.html')
                 .then(response => response.text())
                 .then(data => {
-                    document.getElementById(day + '-recipe.html').innerHTML = data;
+                    document.getElementById(day , recipe).innerHTML = data;
                     toggleRecipe(recipeId); // Ensure that the recipe is toggled after loading
                 })
                 .catch(error => console.error('Error fetching the recipe:', error));
