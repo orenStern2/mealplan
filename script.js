@@ -44,8 +44,7 @@ function getDayFromRecipeId(recipeId) {
   }
 
   // Extract the number from the recipeId (e.g., "breakfast1" -> "1")
-  const idNumber = recipeId.match(/\d+(\.\d+)?/)[0] // This will match '1', '1.2', etc.
-  console.log('day', dayMap[idNumber])
+  const idNumber = recipeId.match(/\d+/)[0]
   return dayMap[idNumber]
 }
 
