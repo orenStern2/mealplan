@@ -25,3 +25,31 @@ document.addEventListener('DOMContentLoaded', function () {
     })
   }
 })
+
+document.addEventListener('DOMContentLoaded', function () {
+  const daysOfWeek = [
+    'sunday',
+    'monday',
+    'tuesday',
+    'wednesday',
+    'thursday',
+    'friday',
+    'saturday',
+  ]
+
+  daysOfWeek.forEach((day) => {
+    fetch(`${day}-recipe.html`)
+      .then((response) => response.text())
+      .then((data) => {
+        const recipeElement = document.getElementById(`${day}-recipe`)
+        if (recipeElement) {
+          recipeElement.innerHTML = data
+        } else {
+          console.error(`Element with ID ${day}-recipe not found`)
+        }
+      })
+      .catch((error) =>
+        console.error(`Error loading the recipe for ${day}:`, error)
+      )
+  })
+})
