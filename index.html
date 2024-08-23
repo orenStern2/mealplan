@@ -22,62 +22,60 @@
         <th>ארוחת ערב</th>
     </tr>
     <tr>
-            <td>ראשון</td>
-            <td><a href="javascript:void(0);" onclick="toggleRecipe('breakfast1')">דייסת שיבולת שועל עם בננה ושקדים</a></td>
-            <td><a href="javascript:void(0);" onclick="toggleRecipe('snack1')">יוגורט עם גרנולה ופירות יער</a></td>
-            <td><a href="javascript:void(0);" onclick="toggleRecipe('lunch1')">חזה עוף עם קינואה וסלט ירקות*</a></td>
-            <td><a href="javascript:void(0);" onclick="toggleRecipe('snack1.2')">חטיף חלבון או במבה</a></td>
-            <td><a href="javascript:void(0);" onclick="toggleRecipe('dinner1')">שקשוקה עם גבינה ופרוסת לחם מלא</a></td>
+        <td>ראשון</td>
+        <td><a href="javascript:void(0);" id="sunday-breakfast" onclick="toggleRecipe('breakfast1')"></a></td>
+        <td><a href="javascript:void(0);" id="sunday-snack1" onclick="toggleRecipe('snack1')"></a></td>
+        <td><a href="javascript:void(0);" id="sunday-lunch" onclick="toggleRecipe('lunch1')"></a></td>
+        <td><a href="javascript:void(0);" id="sunday-snack2" onclick="toggleRecipe('snack1_2')"></a></td>
+        <td><a href="javascript:void(0);" id="sunday-dinner" onclick="toggleRecipe('dinner1')"></a></td>
     </tr>
     <tr>
         <td>שני</td>
-        <td><a href="javascript:void(0);" onclick="toggleRecipe('breakfast2')">חביתה עם ירקות ולחם מלא</a></td>
-        <td><a href="javascript:void(0);" onclick="toggleRecipe('snack2')">אגוזים ושקדים עם פירות טריים</a></td>
-        <td><a href="javascript:void(0);" onclick="toggleRecipe('lunch2')">חזה עוף עם קינואה וסלט ירקות*</a></td>
-        <td><a href="javascript:void(0);" onclick="toggleRecipe('snack2.2')">יוגורט עם חצי תפוח עץ</a></td>
-        <td><a href="javascript:void(0);" onclick="toggleRecipe('dinner2')">טונה עם סלט ירקות וביצה קשה</a></td>
+        <td><a href="javascript:void(0);" id="monday-breakfast" onclick="toggleRecipe('breakfast2')"></a></td>
+        <td><a href="javascript:void(0);" id="monday-snack1" onclick="toggleRecipe('snack2')"></a></td>
+        <td><a href="javascript:void(0);" id="monday-lunch" onclick="toggleRecipe('lunch2')"></a></td>
+        <td><a href="javascript:void(0);" id="monday-snack2" onclick="toggleRecipe('snack2_2')"></a></td>
+        <td><a href="javascript:void(0);" id="monday-dinner" onclick="toggleRecipe('dinner2')"></a></td>
     </tr>
     <tr>
         <td>שלישי</td>
-        <td><a href="javascript:void(0);" onclick="toggleRecipe('breakfast3')">שייק חלבון עם פירות יער ושיבולת שועל</a></td>
-        <td><a href="javascript:void(0);" onclick="toggleRecipe('snack3')">ירקות חתוכים עם חומוס</a></td>
-        <td><a href="javascript:void(0);" onclick="toggleRecipe('lunch3')">חזה עוף עם קינואה וסלט ירקות*</a></td>
-        <td><a href="javascript:void(0);" onclick="toggleRecipe('snack3.2')">חטיף אנרגיה</a></td>
-        <td><a href="javascript:void(0);" onclick="toggleRecipe('dinner3')">פשטידת ירקות עם גבינת קוטג'</a></td>
+        <td><a href="javascript:void(0);" id="tuesday-breakfast" onclick="toggleRecipe('breakfast3')"></a></td>
+        <td><a href="javascript:void(0);" id="tuesday-snack1" onclick="toggleRecipe('snack3')"></a></td>
+        <td><a href="javascript:void(0);" id="tuesday-lunch" onclick="toggleRecipe('lunch3')"></a></td>
+        <td><a href="javascript:void(0);" id="tuesday-snack2" onclick="toggleRecipe('snack3_2')"></a></td>
+        <td><a href="javascript:void(0);" id="tuesday-dinner" onclick="toggleRecipe('dinner3')"></a></td>
     </tr>
     <tr>
         <td>רביעי</td>
-        <td><a href="javascript:void(0);" onclick="toggleRecipe('breakfast4')">פנקייק חלבון עם בננה ודבש</a></td>
-        <td><a href="javascript:void(0);" onclick="toggleRecipe('snack4')">אגוזים ופירות יבשים</a></td>
-        <td><a href="javascript:void(0);" onclick="toggleRecipe('lunch4')">סטייק עוף עם אורז מלא וירקות מוקפצים*</a></td>
-        <td><a href="javascript:void(0);" onclick="toggleRecipe('snack4.2')">כוס חלב עם שקדים</a></td>
-        <td><a href="javascript:void(0);" onclick="toggleRecipe('dinner4')">מרק עדשים עם פרוסת לחם מלא*</a></td>
+        <td><a href="javascript:void(0);" id="wednesday-breakfast" onclick="toggleRecipe('breakfast4')"></a></td>
+        <td><a href="javascript:void(0);" id="wednesday-snack1" onclick="toggleRecipe('snack4')"></a></td>
+        <td><a href="javascript:void(0);" id="wednesday-lunch" onclick="toggleRecipe('lunch4')"></a></td>
+        <td><a href="javascript:void(0);" id="wednesday-snack2" onclick="toggleRecipe('snack4_2')"></a></td>
+        <td><a href="javascript:void(0);" id="wednesday-dinner" onclick="toggleRecipe('dinner4')"></a></td>
     </tr>
     <tr>
         <td>חמישי</td>
-        <td><a href="javascript:void(0);" onclick="toggleRecipe('breakfast5')">דייסת קינואה עם חלב שקדים ודבש</a></td>
-        <td><a href="javascript:void(0);" onclick="toggleRecipe('snack5')">פירות טריים עם יוגורט</a></td>
-        <td><a href="javascript:void(0);" onclick="toggleRecipe('lunch5')">סטייק עוף עם אורז מלא וירקות מוקפצים*</a></td>
-        <td><a href="javascript:void(0);" onclick="toggleRecipe('snack5.2')">חטיף חלבון</a></td>
-        <td><a href="javascript:void(0);" onclick="toggleRecipe('dinner5')">מרק עדשים עם פרוסת לחם מלא*</a></td>
+        <td><a href="javascript:void(0);" id="thursday-breakfast" onclick="toggleRecipe('breakfast5')"></a></td>
+        <td><a href="javascript:void(0);" id="thursday-snack1" onclick="toggleRecipe('snack5')"></a></td>
+        <td><a href="javascript:void(0);" id="thursday-lunch" onclick="toggleRecipe('lunch5')"></a></td>
+        <td><a href="javascript:void(0);" id="thursday-snack2" onclick="toggleRecipe('snack5_2')"></a></td>
+        <td><a href="javascript:void(0);" id="thursday-dinner" onclick="toggleRecipe('dinner5')"></a></td>
     </tr>
     <tr>
         <td>שישי</td>
-        <td><a href="javascript:void(0);" onclick="toggleRecipe('breakfast6')">שייק ירוק עם אבקת חלבון</a></td>
-        <td><a href="javascript:void(0);" onclick="toggleRecipe('snack6')">אגוזים ופירות יבשים</a></td>
-
-
-<td>ארוחה במסעדה: פיצה / המבורגר / איטלקי / סיני</td>
-        <td><a href="javascript:void(0);" onclick="toggleRecipe('snack6.2')">יוגורט עם חצי אגס</a></td>
-        <td><a href="javascript:void(0);" onclick="toggleRecipe('dinner6')">סלט קינואה עם ירקות קלויים וגבינת פטה</a></td>
+        <td><a href="javascript:void(0);" id="friday-breakfast" onclick="toggleRecipe('breakfast6')"></a></td>
+        <td><a href="javascript:void(0);" id="friday-snack1" onclick="toggleRecipe('snack6')"></a></td>
+        <td><a href="javascript:void(0);" id="friday-lunch" onclick="toggleRecipe('lunch6')"></a></td>
+        <td><a href="javascript:void(0);" id="friday-snack2" onclick="toggleRecipe('snack6_2')"></a></td>
+        <td><a href="javascript:void(0);" id="friday-dinner" onclick="toggleRecipe('dinner6')"></a></td>
     </tr>
     <tr>
         <td>שבת</td>
-        <td><a href="javascript:void(0);" onclick="toggleRecipe('breakfast7')">פריטטה עם ירקות וגבינת עיזים</a></td>
-        <td><a href="javascript:void(0);" onclick="toggleRecipe('snack7')">פירות טריים עם יוגורט</a></td>
-        <td><a href="javascript:void(0);" onclick="toggleRecipe('lunch7')">סטייק עוף עם אורז מלא וירקות מוקפצים*</a></td>
-        <td><a href="javascript:void(0);" onclick="toggleRecipe('snack7.2')">שוקולד מריר</a></td>
-        <td><a href="javascript:void(0);" onclick="toggleRecipe('dinner7')">מרק ירקות עם גריסים*</a></td>
+        <td><a href="javascript:void(0);" id="saturday-breakfast" onclick="toggleRecipe('breakfast7')"></a></td>
+        <td><a href="javascript:void(0);" id="saturday-snack1" onclick="toggleRecipe('snack7')"></a></td>
+        <td><a href="javascript:void(0);" id="saturday-lunch" onclick="toggleRecipe('lunch7')"></a></td>
+        <td><a href="javascript:void(0);" id="saturday-snack2" onclick="toggleRecipe('snack7_2')"></a></td>
+        <td><a href="javascript:void(0);" id="saturday-dinner" onclick="toggleRecipe('dinner7')"></a></td>
     </tr>
 </table>
 

@@ -25,26 +25,26 @@ function toggleRecipe(recipeId) {
 }
 
 function getDayFromRecipeId(recipeId) {
-  console.log('recipeId', recipeId)
   const dayMap = {
     1: 'sunday',
-    1.2: 'sunday',
+    1_2: 'sunday',
     2: 'monday',
-    2.2: 'monday',
+    2_2: 'monday',
     3: 'tuesday',
-    3.2: 'tuesday',
+    3_2: 'tuesday',
     4: 'wednesday',
-    4.2: 'wednesday',
+    4_2: 'wednesday',
     5: 'thursday',
-    5.2: 'thursday',
+    5_2: 'thursday',
     6: 'friday',
-    6.2: 'friday',
+    6_2: 'friday',
     7: 'saturday',
-    7.2: 'saturday',
+    7_2: 'saturday',
   }
 
   // Extract the number from the recipeId (e.g., "breakfast1" -> "1")
-  const idNumber = recipeId.match(/\d+/)[0]
+  const idNumber = recipeId.match(/\d+(\.\d+)?/)[0] // This will match '1', '1.2', etc.
+  console.log('day', dayMap[idNumber])
   return dayMap[idNumber]
 }
 
@@ -185,3 +185,44 @@ function resetDailyTotals() {
   orenTotalElement.innerText = dailyOrenCalories
   irisTotalElement.innerText = dailyIrisCalories
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+  const daysOfWeek = [
+    'sunday',
+    'monday',
+    'tuesday',
+    'wednesday',
+    'thursday',
+    'friday',
+    'saturday',
+  ]
+
+  daysOfWeek.forEach((day) => {
+    fetch(`${day}-recipe.html`)
+      .then((response) => response.text())
+      .then((data) => {
+        const parser = new DOMParser()
+        const doc = parser.parseFromString(data, 'text/html')
+
+        document.getElementById(`${day}-breakfast`).innerText =
+          doc.querySelector(
+            `#breakfast${daysOfWeek.indexOf(day) + 1} h2`
+          ).innerText
+        document.getElementById(`${day}-snack1`).innerText = doc.querySelector(
+          `#snack${daysOfWeek.indexOf(day) + 1} h2`
+        ).innerText
+        document.getElementById(`${day}-lunch`).innerText = doc.querySelector(
+          `#lunch${daysOfWeek.indexOf(day) + 1} h2`
+        ).innerText
+        document.getElementById(`${day}-snack2`).innerText = doc.querySelector(
+          `#snack${daysOfWeek.indexOf(day) + 1}_2 h2`
+        ).innerText
+        document.getElementById(`${day}-dinner`).innerText = doc.querySelector(
+          `#dinner${daysOfWeek.indexOf(day) + 1} h2`
+        ).innerText
+      })
+      .catch((error) =>
+        console.error(`Error loading the recipe for ${day}:`, error)
+      )
+  })
+})
